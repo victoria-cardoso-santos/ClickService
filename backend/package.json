@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "clickservice",
+  "version": "1.0.0",
+  "description": "Plataforma ClickService para contratações de serviços essenciais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js localhost 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoriacardoso/ClickService.git"
+  },
+  "keywords": [
+    "clickservice"
+  ],
+  "author": "victoria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victoriacardoso/ClickService/issues"
+  },
+  "homepage": "https://github.com/victoriacardoso/ClickService#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
