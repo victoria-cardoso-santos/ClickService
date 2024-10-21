@@ -1,8 +1,8 @@
-import mongoose from "../db/conn";
+import mongoose from "../db/conn.js";
 const { Schema } = mongoose
 
-const Professional = mongoose.model(
-    "Professional",
+const User = mongoose.model(
+    "User",
     new Schema({
         name: {
             type: String,
@@ -25,10 +25,10 @@ const Professional = mongoose.model(
             required: false,
         },
         services: [{
-            type: mongoose.SchemaType.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "Service",
             required: false,
         }],
     })
 )
-export default Professional
+export default User
