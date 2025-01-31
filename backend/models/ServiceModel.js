@@ -1,4 +1,4 @@
-import mongoose from "../db/conn";
+import mongoose from "../db/conn.js";
 const {Schema} = mongoose
 
 const Service = mongoose.model(
@@ -15,6 +15,11 @@ const Service = mongoose.model(
         price: {
             type: Number,
             required: true
+        },
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
         }
     })
 )

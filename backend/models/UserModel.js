@@ -23,12 +23,8 @@ const User = mongoose.model(
         available: {
             type: Boolean,
             required: false,
-        },
-        services: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Service",
-            required: false,
-        }],
+        }
+        
     })
 )
 export default User
