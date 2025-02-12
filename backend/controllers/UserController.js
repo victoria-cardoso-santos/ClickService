@@ -73,6 +73,7 @@ class UserController {
         }
 
         const user = await User.findOne({ email: email })
+        console.log(email)
 
         if (!user) {
             res.status(422).json({

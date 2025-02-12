@@ -1,9 +1,9 @@
 <template>
-    <header class="grid grid-cols-2 text-center">
-        <nav class="col-span-2 hidden md:block lg:block">
+    <header class="text-center">
+        <nav class="hidden md:block lg:block">
             <div class="flex justify-center">
                 <router-link to="/">
-                    <img class="w-40" src="../assets/ClickService.png" alt="ClickService">
+                    <img class="w-50" src="../assets/ClickService.png" alt="ClickService">
                 </router-link>
             </div>
         </nav>

@@ -1,28 +1,55 @@
 <template>
-   <div>
-        <main class="flex justify-center">
-            <h2>Acesse sua conta</h2>
-            
-            <div>
-                <label for="email">E-mail</label>
-                <input type="text" placeholder="Escreva seu e-mail">
+    <div class="min-h-screen flex items-center justify-center">
+        <main class="px-8 bg-white rounded-lg shadow-lg max-w-7xl">
+            <h2 class="mb-20 text-[#3395cb] font-bold text-2xl">Acesse sua conta</h2>
+
+            <div class="flex flex-col items-start pb-3">
+                <label class="py-2 px-2 font-bold text-[#444444]" for="email">E-mail</label>
+                <input
+                    v-model="form.email"
+                    class="border border-[#3395cb] rounded-lg px-3 py-4 focus:ring-2 focus:ring-blue-100 outline-none w-100 "
+                    type="text" placeholder="Escreva seu e-mail">
+            </div>
+
+            <div class="flex flex-col items-start">
+                <label class="py-2 px-2 font-bold text-[#444444]"  for="password">Senha</label>
+                <input
+                    v-model="form.password"
+                    class="border border-[#3395cb] rounded-lg px-3 py-4 focus:ring-2 focus:ring-blue-100 outline-none w-100 "
+                    type="password" placeholder="Escreva sua senha">
+
             </div>
 
             <div>
-                <label for="password">Senha</label>
-                <input type="password" placeholder="Escreva sua senha">
-                
-            </div>
-
-            <div>
-                <input type="submit" value="Entrar">
+                <button type="button" @click.prevent="login"
+                    class="my-8 text-[#fff] bg-[#3395cb] rounded-lg p-3 w-100 font-bold">Entrar</button>
             </div>
         </main>
-   </div>
+    </div>
 </template>
 
-<script>
-export default {
-    name: 'LoginPage'
+<script setup>
+
+
+import api from "@/api.js";
+const form = {
+    email: '',
+    password: '',
+};
+async function login() {
+    api.post('http://localhost:5000/users/login', form)
+    .then((res) => {
+        localStorage.setItem('token', res.data.token);
+        alert("Login efetuado com sucesso");
+        window.location.reload();
+        
+    })
+    .catch(() => {
+    });
 }
+
+
+
+
+
 </script>
