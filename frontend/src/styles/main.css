@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-button, a:hover{
+input[type="submit"], a:hover{
     cursor: pointer;
 }

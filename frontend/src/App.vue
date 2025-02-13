@@ -1,11 +1,12 @@
 <template>
-  <MainHeader v-if="!isLoginRoute" />
-  <BasicHeader v-if="isLoginRoute" />
+  <MainHeader v-if="!isBasicRoute" />
+  <BasicHeader v-if="isBasicRoute" />
 </template>
 
 <script>
 import BasicHeader from './components/BasicHeader.vue';
 import MainHeader from './components/MainHeader.vue';
+
 export default {
   name: 'App',
   components: {
@@ -13,8 +14,8 @@ export default {
     BasicHeader
   },
   computed: {
-    isLoginRoute() {
-      return this.$route.path === '/login';
+    isBasicRoute() {
+      return this.$route.path === '/login' ||  this.$route.path === '/sign-up';
     }
   }
 

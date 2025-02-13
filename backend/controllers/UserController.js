@@ -53,6 +53,8 @@ class UserController {
             password: passwordHash,
         })
 
+        console.log(user);
+
         try {
             const newUser = await user.save()
             await createUserToken(newUser, req, res)
@@ -73,7 +75,6 @@ class UserController {
         }
 
         const user = await User.findOne({ email: email })
-        console.log(email)
 
         if (!user) {
             res.status(422).json({
